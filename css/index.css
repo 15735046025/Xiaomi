@@ -1,13 +1,11 @@
 @font-face {
   font-family: 'iconfont';  /* project id 561442 */
-  src: url('https://at.alicdn.com/t/font_561442_hru41po558us1yvi.eot');
-  src: url('https://at.alicdn.com/t/font_561442_hru41po558us1yvi.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_561442_hru41po558us1yvi.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_561442_hru41po558us1yvi.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_561442_hru41po558us1yvi.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_561442_nub6cbxepa0v0a4i.eot');
+  src: url('https://at.alicdn.com/t/font_561442_nub6cbxepa0v0a4i.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_561442_nub6cbxepa0v0a4i.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_561442_nub6cbxepa0v0a4i.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_561442_nub6cbxepa0v0a4i.svg#iconfont') format('svg');
 }
-
-
 .head{
 	width: 100%;
 	height: 40px;
@@ -62,7 +60,7 @@
 	margin-left: 189px;
 	font-size: 15px;
 }
-.daohang_wenzi span{ /* 后代选择器 */
+.daohang_wenzi span{ 
 	line-height: 100px;
 	color: #333;
 	float: left;
@@ -83,9 +81,9 @@
 	border: 1px solid #e0e0e0;
 	float: right;
 	text-align: right;
+	outline: none;
 }
 .daohang_sousuo{
-
 	width: 50px;
 	height: 50px;
 	text-align: center;
@@ -96,8 +94,7 @@
 	background-color: transparent;
 	border: transparent;
 	border: 1px solid #e0e0e0;
-	border-left: 0;
-	
+	border-left: 0;	
 }
 #wbanner{
 	width: 1226px;
@@ -110,12 +107,71 @@
 	height: 100%;
 	position: relative;
 }
-.wbanner_img img{
-	width: 100%;
-	height: 100%;
+.wbanner_img li img{
+	width: 1226px;
+	height: 460px;	
+}
+.wbanner_img li{
+	width: 1226px;
+	height: 460px;
 	position: absolute;
 	top: 0;
 	left: 0;
+	transition: all 1s;
+	opacity: 0.5;
+}
+.wbanner_img li.active{
+	z-index: 9;
+	opacity: 1;
+}
+.pagerbox{
+	width: 200px;
+	height: 10px;
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	z-index: 999;
+}
+.pagerbox li{
+	width: 6px;
+	height: 6px;
+	margin: 0 10px;
+	background-color: rgba(0, 0, 0, .4);
+	border-radius: 50%;
+	border: 2px solid #757575;
+	float: left;
+	transition: all 0.5s;
+}
+.pagerbox li.active{
+	background-color: #fff;
+}
+.pagerbox li:hover{
+	background-color: #fff;
+}
+.prev,.next{
+	width: 41px;
+	height: 69px;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	background: url('../img/icon-slides.png');
+	z-index: 9999;
+	opacity: .6;
+	cursor: pointer;
+}
+.prev{
+	left: 234px;
+	background-position: -83px 0;
+}
+.prev:hover{
+	background-position: 0 0;
+}
+.next{
+	right: 0;
+	background-position: -124px 0;
+}
+.next:hover{
+	background-position: -42px 0;
 }
 .wbanner_nav{
 	width: 234px;
@@ -125,7 +181,7 @@
 	left: 0;
 	top: 0;
 	padding: 20px 0;
-
+	z-index: 10;
 }
 .wbanner_nav li{
 	width: 174px;
@@ -149,6 +205,7 @@
 	top: 0;
 	bottom: 0;
 	margin: auto;
+	z-index: 10;
 }
 .wbanner_lbtn{
 	left: 234px;
@@ -270,14 +327,23 @@
 	border-right: 1px solid #E1E0E0;
 	color: #E0E0E0;
 }
-.star_btn:hover .star_btn2{
+.star_btn div:hover {
 	color: #ff6700;
 	cursor: pointer;
+}
+.star_btn div.disable{
+	color: #B0B0B0;
 }
 .star_bottom{
 	width: 100%;
 	height: 340px;
 	background-color: #ffffff;
+	overflow: hidden;
+}
+.star_inner{
+	width: 5000px;
+	height: 300px;
+	transition: all 1s;
 }
 .star_item{
 	width: 234px;
@@ -369,6 +435,7 @@
 .zhineng_bottom{
 	width: 100%;
 	height: 614px;
+	position: relative;
 }
 .zhineng_left{
 	width: 234px;
@@ -378,8 +445,14 @@
 }
 .zhineng_right{
 	width: 992px;
-	height: 100%;
+	height: 614px;
 	float: left;
+	position: absolute;
+	top: 0;
+	left:234px;
+}
+.zhineng_bottom .active{
+	z-index: 9;
 }
 .zhineng_item{
 	width: 234px;
@@ -463,6 +536,7 @@
 }
 .tuijian_bottom{
 	height: 307px;
+	overflow: hidden;
 }
 .tuijian{
 	height: 365px;
@@ -523,7 +597,6 @@
 	width: 120px;
 	height: 12px;
 }
-
 .neirong_item{
 	width: 296px;
 	height: 419px;
@@ -534,6 +607,9 @@
 	text-align: center;
 	position: relative;
 	transition: all 1s linear;
+}
+.neirong_content{
+	width: 100%;
 }
 .neirong_item1{
 	margin-left: 0px;
@@ -557,7 +633,6 @@
 .neirong_item .neirong_title3{
 	color:#2196F3 ;
 }
-
 .neirong_bottom{
 	height: 420px;
 }
@@ -579,8 +654,7 @@
 	font-size: 12px;
 	color:#b0b0b0;
 	height: 32px;
-	display: block;
-	
+	display: block;	
 }
 .neirong_item h2{
 	margin-top: 50px;
@@ -596,8 +670,7 @@
 }
 .neirong_dian{
 	margin-top: 30px;
-	text-align: center;
-	
+	text-align: center;	
 }
 .neirong_xiaodian{
  	font-family: 'iconfont'; 
@@ -626,6 +699,7 @@
 	top: 0;
 	bottom: 0;
 	margin: auto;
+	cursor: pointer;
 }
 .neirong_lbtn{
 	left: 0px;
@@ -1010,7 +1084,7 @@
 .banner_right img:hover{
 	box-shadow:0 8px 20px 5px #e0e0e0;
 }
-.zhineng_left:hover,.zhineng_item:hover,.reping_item:hover,.neirong_item:hover,.shipin_item:hover{
+.zhineng_leftimg:hover,.zhineng_item:hover,.reping_item:hover,.neirong_item:hover,.shipin_item:hover{
 	transform: translateY(-4px);
 	box-shadow:0 8px 20px 5px #e0e0e0;
 
