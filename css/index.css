@@ -321,18 +321,19 @@
 	line-height: 22px;
 	float: left;
 	color: #B0B0B0;
-	cursor: pointer;	
+	cursor: pointer;
+	user-select: none;
 }
 .star_btn .star_btn1{
 	border-right: 1px solid #E1E0E0;
-	color: #E0E0E0;
+	user-select: none;	
 }
 .star_btn div:hover {
 	color: #ff6700;
 	cursor: pointer;
 }
 .star_btn div.disable{
-	color: #B0B0B0;
+	color: #E0E0E0;
 }
 .star_bottom{
 	width: 100%;

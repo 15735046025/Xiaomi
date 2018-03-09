@@ -119,3 +119,34 @@
 	})
 	
 }
+//为你推荐部分效果
+{
+	const prev=document.querySelector(".star_btn11");
+	const next=document.querySelector(".star_btn22");
+	const inner=document.querySelector(".star_inner2");
+	let n=0;
+	next.onclick=function(){
+		n++;
+		prev.classList.remove("disable");
+		if(n===3){
+			this.classList.add("disable");
+		}
+		if(n===4){
+			n=3;
+			return;
+		}
+		inner.style.marginLeft=-1226*n+"px";
+	}
+	prev.onclick=function(){
+		n--;
+		next.classList.remove("disable");
+		if(n===0){
+			this.classList.add("disable");
+		}
+		if(n===-1){
+			n=0;
+			return;
+		}
+		inner.style.marginLeft=-1226*n+"px";
+	}
+}
