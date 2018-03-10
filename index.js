@@ -150,3 +150,96 @@
 		inner.style.marginLeft=-1226*n+"px";
 	}
 }
+//内容部分
+{	
+	function desc(parent){
+		let prev=parent.querySelector(".neirong_lbtn");
+		let next=parent.querySelector(".neirong_rbtn");
+		let contents=parent.querySelectorAll(".neirong_foot");
+		let inner=parent.querySelector(".neirong_inner");
+		let pagers=parent.querySelectorAll(".neirong_xiaodian");
+
+		let n=0;
+		next.onclick=function(){
+			n++;
+			if(n===contents.length){
+				n=contents.length-1;
+				return;
+			}
+			inner.style.marginLeft=n*-296+"px";
+			pagers[n].classList.add("active");
+			pagers[n-1].classList.remove("active");
+			obj=pagers[n];
+		}
+		prev.onclick=function(){
+			n--;
+			if(n<0){
+				n=0;
+				return;
+			}
+			inner.style.marginLeft=n*-296+"px";
+			pagers[n].classList.add("active");
+			pagers[n+1].classList.remove("active");
+			obj=pagers[n];
+		}
+		let obj=pagers[0];
+		pagers.forEach(function(ele,index){
+			ele.onclick=function(){
+				obj.classList.remove("active");
+				ele.classList.add("active");
+				obj=ele;
+				inner.style.marginLeft=index*-296+"px";
+				n=index;
+			}
+
+		})
+	}
+	const desclist=document.querySelectorAll(".neirong_item");
+	desclist.forEach(function(ele){
+		desc(ele);
+	})
+}
+//banner部分效果
+{
+	let labels=document.querySelectorAll(".label");   
+	let menus=document.querySelectorAll(".menu");  
+	let obj=menus[0]; 
+	labels.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			obj.style.display="none";
+			menus[index].style.display="block";
+			obj=menus[index];
+		}
+		ele.onmouseleave=function(){
+			menus[index].style.display="none";
+		}
+	})
+}
+//导航部分效果
+{
+	let box=document.querySelector(".daohang_word");
+	let top=document.querySelector(".daohang_wenzi");
+	let bottom=document.querySelector(".daohang_bottom");
+	let lists=document.querySelectorAll(".daohang_list");
+	const titles=document.querySelectorAll(".daohang_wenzi span");
+	top.onmouseenter=function(){
+		bottom.style.height="230px";
+		bottom.style.display="block";
+	}
+	box.onmouseleave=function(){
+		bottom.style.height="0";
+		bottom.style.display="none";
+	}
+	let obj=lists[0];
+	titles.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			obj.style.display="none";
+			lists[index].style.display="block";
+			obj=lists[index];
+		}
+	})
+
+	
+
+
+}

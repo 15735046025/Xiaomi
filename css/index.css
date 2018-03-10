@@ -55,17 +55,80 @@
 	background-color: #FF6700; 
 	float: left;
 }
-.daohang_wenzi{
-	float: left;
-	margin-left: 189px;
+.daohang_wenzi,.daohang_wenzi2{	
 	font-size: 15px;
 }
-.daohang_wenzi span{ 
+.daohang_wenzi span,.daohang_wenzi2 span{ 
 	line-height: 100px;
 	color: #333;
 	float: left;
 	padding: 0 10px;
 	cursor: pointer;
+}
+.daohang_wenzi2{
+	float: left;
+}
+.daohang_word{
+	float: left;
+	margin-left: 189px;
+	transition:all 5s linner;
+}
+.daohang_bottom{
+	position: absolute;
+	top: 140px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-left: 0;
+	border-right: 0;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+	z-index: 99;
+	display: none;
+}
+.daohang_list{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 1226px;
+	height: 100%;
+	margin: auto;
+	background-color: #fff;
+	display: none;
+}
+.daohang_btn{
+	width: 204px;
+	height: 100%;	
+	/* padding:  20px; */
+	text-align: center;
+	float: left;
+}
+.daohang_img{
+	width: 100%;
+	height: 110px;
+	margin-top: 36px;
+	border-left: 1px solid #e0e0e0;
+}
+.daohang_img2{
+	border-left: 0;
+}
+.daohang_img img{
+	width: 160px;
+	height: 110px;	
+}
+.daohang_title{
+	margin-top: 16px;
+	color: #757575;
+	font-size: 12px;
+}
+.daohang_price{
+	font-size: 12px;
+	color: #ff6700;
 }
 .search{
 	width: 293px;
@@ -75,12 +138,13 @@
 	line-height: 50px;
 }
 .search_left{
-	width: 240px;
+	width: 224px;
 	height: 48px;
 	border: transparent;
 	border: 1px solid #e0e0e0;
 	float: right;
-	text-align: right;
+	padding: 0 8px;
+	/* text-align: left; */
 	outline: none;
 }
 .daohang_sousuo{
@@ -125,17 +189,17 @@
 	opacity: 1;
 }
 .pagerbox{
-	width: 200px;
+	width: 100px;
 	height: 10px;
 	position: absolute;
-	right: 30px;
-	bottom: 30px;
-	z-index: 999;
+	right: 40px;
+	bottom: 20px;
+	z-index: 50;
 }
 .pagerbox li{
 	width: 6px;
 	height: 6px;
-	margin: 0 10px;
+	margin: 0 5px;
 	background-color: rgba(0, 0, 0, .4);
 	border-radius: 50%;
 	border: 2px solid #757575;
@@ -155,7 +219,7 @@
 	top: 50%;
 	margin-top: -35px;
 	background: url('../img/icon-slides.png');
-	z-index: 9999;
+	z-index: 40;
 	opacity: .6;
 	cursor: pointer;
 }
@@ -181,7 +245,7 @@
 	left: 0;
 	top: 0;
 	padding: 20px 0;
-	z-index: 10;
+	z-index: 60;
 }
 .wbanner_nav li{
 	width: 174px;
@@ -190,6 +254,55 @@
 	font-size: 14px;
 	color: white;
 	padding: 0 30px;
+}
+.menu{
+	width: 795px;
+	height: 459px;
+	position: absolute;
+	top: 0px;
+	left: 234px ;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-left: 0;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+	display: none;	
+}
+.menu2{
+	width: 992px;
+}
+.menulist{
+	width: 200px;
+	height: 100%;
+	padding: 18px 0;	
+	margin-left: 60px;
+	float: left;
+}
+.menulist2{
+	margin-left: 0;
+}
+.menulist li img{
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+.menulist li{
+	height: 76px;
+	/* margin-top: 30px; */
+}
+.menulist .list{
+	margin-top: 0;
+}
+.menu .menu_img2{
+	/* margin-left: 160px; */
+}
+.menu_title{
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	font-size: 14px;
+	/* margin-left: 10px; */
+	color: #333;
+
 }
 .wbanner_jiantou{
 	float: right;
@@ -602,17 +715,25 @@
 }
 .neirong_item{
 	width: 296px;
-	height: 419px;
-	padding: 0;
+	height: 375px;
+	padding: 45px 0 0;
 	background-color: #FEFEFE;
 	margin-left: 14px;
 	float: left;
 	text-align: center;
 	position: relative;
 	transition: all 1s linear;
+	overflow: hidden;
 }
-.neirong_content{
-	width: 100%;
+.neirong_inner{
+	width: 3000px;
+	height: 340px;	
+}
+.neirong_foot{
+    width: 296px;
+    height: 340px;
+    background-color: #fff;
+    float: left;
 }
 .neirong_item1{
 	margin-left: 0px;
@@ -640,17 +761,17 @@
 	height: 420px;
 }
 .neirong_item img{
-	height: 139px;
+	width: 216px;
+	height: 145px;
 	margin: 0 auto;
 	display: block;
 	margin-top: 20px;
 }
-.neirong_item a{
-	margin: 34px 28px 0;
+.neirong_title{
+	margin: 18px 28px 0;
 	display: block;
 	color: #333;
-	font-size: 17px;
-	margin-top: 25px;
+	font-size: 20px;
 }
 .neirong_item p{
 	margin: 11px 51px 0;
@@ -660,30 +781,49 @@
 	display: block;	
 }
 .neirong_item h2{
-	margin-top: 50px;
 	display: inline-block;
-	font-size: 15px;
+	font-size: 16px;
 	color:#ff6700;
 	font-weight: normal;
 }
-.neirong_item .neirong_3{
+.neirong_price{
 	margin: 20px 28px 0;
 	text-align:center;
 	height: 12px;
+	font-size: 14px;
+	display: block;
+	color: #333;
 }
 .neirong_dian{
-	margin-top: 30px;
-	text-align: center;	
+	position: absolute;
+	left: 0;
+	bottom: 15px;
+	width: 100%;
+	height: 30px;
+	margin-top: 30px ;
+	margin: 16px auto;
+	z-index: 99;
 }
 .neirong_xiaodian{
- 	font-family: 'iconfont'; 
-	font-size: 14px;
-	color: #B0B0B0;
-	margin-left:10px;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+ 	margin: 10px auto;
+	background-color: #B0B0B0;
+	margin-left:16px;
+	float: left;
 }
 .neirong_xiaodian1{
-	margin-left: 0;
-	color:  #FF6700;
+	margin-left: 110px;	
+}
+.neirong_dian span.active{
+	background-color:  #fff;
+	border: 2px solid #ff6700;
+}
+.neirong_xiaodian:hover{
+	background-color:  #ff6700;
 }
 .neirong_xiaodian span{
 	color: white;
@@ -703,6 +843,7 @@
 	bottom: 0;
 	margin: auto;
 	cursor: pointer;
+	z-index: 99;
 }
 .neirong_lbtn{
 	left: 0px;
@@ -833,14 +974,15 @@
 	text-align: left;
 	float: left;
 }
-.bottom_help{
+.bottom_item .bottom_help{
+	color: #424242;
 	margin-top: 40px;
 	font-size: 14px;
 }
-.bottom_item h3{
+.bottom_item p{
 	margin-top: 14px;
-	font-size: 11px;
-	color: #b0b0b0;
+	font-size: 12px;
+	color: #757575;
 }
 .bottom_item .bottom_guanli{
 	margin-top: 25px;
@@ -885,7 +1027,6 @@
 	color: #ff6700;
 	font-size: 15px;
 	float: left;
-
 }
 .bottom_kefu{
 	font-size: 11px;
@@ -930,7 +1071,7 @@
 .foot_line{
 	width: 1px;
 	height: 12px;
-	background-color: #423d39;
+	background-color: #b0b0b0;
 	float: left;
 	margin: 2px 7px 0;
 }
@@ -963,7 +1104,7 @@
 	margin-top: 36px;
 }
 .head_wenzi:hover{
-	color: #FC7C00;
+	color: #fff;
 }
 .head_buy:hover{
 	background-color: #fff;
@@ -972,7 +1113,7 @@
 .head_buy:hover span{
 	color: #ff6700;
 }
-.daohang_wenzi span:hover{
+.daohang_wenzi span:hover,.daohang_wenzi2 span:hover{
 	color: #ff6700;
 	cursor: pointer;
 }
@@ -994,7 +1135,7 @@
 	bottom: 0;
 	opacity: 1;
 }
-.wbanner_nav li:hover{
+.wbanner_nav .label:hover{
 	background-color:  #ff6700;
 	cursor: pointer;
 }
